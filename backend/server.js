@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin: "http://localhost:3000", // allow React dev server 
+        origin: "https://crio-mern-xexit.onrender.com", // allow React dev server 
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true

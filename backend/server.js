@@ -43,9 +43,9 @@ mongoose.connect("mongodb+srv://dhinadts:Qwerty%40123@cluster0.g8vjqco.mongodb.n
 
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/admin', adminRoutes);
+app.use('/api/auth', verifyToken, authRoutes);
+app.use('/api/user', verifyToken, userRoutes);
+app.use('/api/admin', verifyToken, adminRoutes);
 
 console.log("Calendarific Key:", process.env.CALENDARIFIC_KEY);
 

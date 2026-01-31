@@ -5,7 +5,7 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-
+const { verifyToken } = require('./middleware/authMiddleware');
 const seedAdmin = require('./config/defaultAdmin');
 
 dotenv.config();

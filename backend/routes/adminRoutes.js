@@ -2,6 +2,7 @@ const express = require('express');
 const { verifyToken, isHR } = require('../middleware/authMiddleware');
 const { viewResignations, concludeResignation, viewResponses } = require('../controllers/adminController');
 
+
 const router = express.Router();
 
 router.get('/resignations', verifyToken, isHR, viewResignations);

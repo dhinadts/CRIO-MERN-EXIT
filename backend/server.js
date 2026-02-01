@@ -5,7 +5,7 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-const { verifyToken } = require('./middleware/authMiddleware');
+const { verifyToken, verifyAdmin } = require('./middleware/authMiddleware');
 const seedAdmin = require('./config/defaultAdmin');
 
 dotenv.config();
@@ -42,10 +42,12 @@ mongoose.connect("mongodb+srv://dhinadts:Qwerty%40123@cluster0.g8vjqco.mongodb.n
 
 
 
+
+
 // Routes
-app.use('/api/auth', verifyToken, authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/user', verifyToken, userRoutes);
-app.use('/api/admin', verifyToken, adminRoutes);
+app.use('/api/admin', verifyToken, verifyAdmin, adminRoutes);
 
 console.log("Calendarific Key:", process.env.CALENDARIFIC_KEY);
 

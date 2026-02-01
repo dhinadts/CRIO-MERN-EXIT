@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://crio-mern-xexit.onrender.com/api',
+    baseURL: 'https://crio-mern-xexit.onrender.com', // no extra /api
 });
 
 api.interceptors.request.use(config => {

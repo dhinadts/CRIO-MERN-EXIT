@@ -6,7 +6,7 @@ export default function ResignationForm() {
 
     const submitResignation = async () => {
         try {
-            const res = await api.post('/user/resign', { lwd });
+            const res = await api.post('/api/user/resign', { lwd });
             alert(`Resignation submitted with ID: ${res.data.data.resignation._id}`);
         } catch (err) {
             alert(err.response?.data?.message || 'Error submitting resignation');

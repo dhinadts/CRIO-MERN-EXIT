@@ -16,7 +16,7 @@ export default function ExitInterview() {
 
     const submitInterview = async () => {
         try {
-            await api.post('/user/responses', { responses });
+            await api.post('/api/user/responses', { responses });
             alert("Exit interview submitted successfully!");
         } catch (err) {
             alert(err.response?.data?.message || "Error submitting interview");

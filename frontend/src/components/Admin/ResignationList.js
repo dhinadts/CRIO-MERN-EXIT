@@ -5,12 +5,12 @@ export default function ResignationList() {
     const [resignations, setResignations] = useState([]);
 
     useEffect(() => {
-        api.get('/admin/resignations').then(res => setResignations(res.data.data));
+        api.get('/api/admin/resignations').then(res => setResignations(res.data.data));
     }, []);
 
     const conclude = async (id, approved) => {
         const lwd = prompt("Enter exit date (YYYY-MM-DD):");
-        await api.put('/admin/conclude_resignation', { resignationId: id, approved, lwd });
+        await api.put('/api/admin/conclude_resignation', { resignationId: id, approved, lwd });
         alert("Resignation updated");
     };
 

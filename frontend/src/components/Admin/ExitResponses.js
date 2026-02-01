@@ -5,7 +5,7 @@ export default function ExitResponses() {
     const [responses, setResponses] = useState([]);
 
     useEffect(() => {
-        api.get('/admin/exit_responses')
+        api.get('/api/admin/exit_responses')
             .then(res => setResponses(res.data.data))
             .catch(err => alert("Error fetching responses"));
     }, []);

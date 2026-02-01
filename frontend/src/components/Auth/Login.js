@@ -7,7 +7,7 @@ export default function Login({ setRole }) {
 
     const handleLogin = async () => {
         try {
-            const res = await api.post('/auth/login', { username, password });
+            const res = await api.post('/api/auth/login', { username, password });
             localStorage.setItem('token', res.data.token);
 
             // Decode role from token (simplified)
